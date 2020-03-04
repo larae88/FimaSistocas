@@ -18,6 +18,7 @@ using System.Web.Services.Protocols;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Pkcs;
+using System.Threading.Tasks;
 
 namespace ControlFirmaElectronica
 {
@@ -413,7 +414,7 @@ namespace ControlFirmaElectronica
                 return Resultado;
         }
 
-        public bool GenerarEsquemaNotificacion(long IdFirma)
+        public async Task<bool> GenerarEsquemaNotificacion(long IdFirma)
         {
             DataSet Resultado = new DataSet("Generales");
             bool bResultado = false;
@@ -686,7 +687,7 @@ namespace ControlFirmaElectronica
             return bResultado;
         }
 
-        public bool GenerarEsquemaNotificacion2(long IdFirma, X509Certificate2 cert)
+        public async Task<bool> GenerarEsquemaNotificacion2(long IdFirma, X509Certificate2 cert)
         {
 
             DataSet Resultado = new DataSet("Generales");

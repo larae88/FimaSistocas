@@ -383,7 +383,7 @@ namespace ControlFirmaElectronica
             //Conexion.Dispose();            
         }
 
-        private void btnNotificar_Click(object sender, EventArgs e)
+        private async void btnNotificar_Click(object sender, EventArgs e)
         {
 
 
@@ -1214,7 +1214,7 @@ namespace ControlFirmaElectronica
             lblcantidad.Text = conteo.ToString();
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private async void pictureBox6_Click(object sender, EventArgs e)
         {
             string accesofirma;
 
@@ -1512,7 +1512,7 @@ namespace ControlFirmaElectronica
 
         }
 
-        private void picEnviar_Click(object sender, EventArgs e)
+        private async void picEnviar_Click(object sender, EventArgs e)
         {
             if (txtcertificado.Text == "" || txtcontraseña.Text == "")
             {
@@ -1562,7 +1562,7 @@ namespace ControlFirmaElectronica
                                 if (Acuerdos.AbrirTextoResolutivo(0) == true)
                                 {
 
-                                    if (Acuerdos.GenerarEsquemaNotificacion2(long.Parse(dgAcuerdos.SelectedRows[0].Cells[0].Value.ToString()), cert2) == true)
+                                    if (await Acuerdos.GenerarEsquemaNotificacion2(long.Parse(dgAcuerdos.SelectedRows[0].Cells[0].Value.ToString()), cert2) == true)
                                     {
                                         Cursor.Current = Cursors.WaitCursor;
                                         //Actualizar las notificaciones que falta por enviar
