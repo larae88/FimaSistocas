@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ImplementacionNotificacionElectronica" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ContratoNotifiacionElectronica_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <gzip:GZipEncoding xmlns:gzip="http://schemas.microsoft.com/ws/06/2004/mspolicy/netgzip1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" location="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="CustomBinding_ContratoNotifiacionElectronica" type="i0:ContratoNotifiacionElectronica">
+    <wsp:PolicyReference URI="#CustomBinding_ContratoNotifiacionElectronica_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesionFederada">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesionFederada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesionFederada">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesionFederada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacionNoBinario">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionNoBinario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacionFederada">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionFederada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesExpediente">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficaciones">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesSuscriptor">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesSuscriptor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImplementacionNotificacionElectronica">
+    <wsdl:port name="CustomBinding_ContratoNotifiacionElectronica" binding="tns:CustomBinding_ContratoNotifiacionElectronica">
+      <soap12:address location="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

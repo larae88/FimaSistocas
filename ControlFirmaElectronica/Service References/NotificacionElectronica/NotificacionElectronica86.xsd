@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd3" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="NotificacionElectronicaUploader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      <xs:element minOccurs="0" name="Notificacion" nillable="true" type="tns:NotificacionUploader" />
+      <xs:element minOccurs="0" name="Suscriptores" nillable="true" type="tns:ArrayOfSuscriptores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificacionElectronicaUploader" nillable="true" type="tns:NotificacionElectronicaUploader" />
+  <xs:complexType name="Expedientes">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="CentroTrabajo" nillable="true" type="q1:Centros" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoExpediente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expedientes" nillable="true" type="tns:Expedientes" />
+  <xs:complexType name="NotificacionUploader">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Notificaciones">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Documento" nillable="true" type="q2:ElementoMediaUploader" />
+          <xs:element xmlns:q3="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Traslado" nillable="true" type="q3:ArrayOfElementoMediaUploader" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificacionUploader" nillable="true" type="tns:NotificacionUploader" />
+  <xs:complexType name="Notificaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Esquema" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentificadorSecuencia" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Notificaciones" nillable="true" type="tns:Notificaciones" />
+  <xs:complexType name="ArrayOfSuscriptores">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Suscriptores" nillable="true" type="tns:Suscriptores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSuscriptores" nillable="true" type="tns:ArrayOfSuscriptores" />
+  <xs:complexType name="Suscriptores">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Acuse" nillable="true" type="q4:ElementoMedia" />
+      <xs:element minOccurs="0" name="Calle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colonia" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Estado" nillable="true" type="q5:Estados" />
+      <xs:element minOccurs="0" name="Exterior" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Formato" nillable="true" type="q6:ElementoMedia" />
+      <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentificadorCredencial" type="xs:long" />
+      <xs:element minOccurs="0" name="Interior" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Materno" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Municipio" nillable="true" type="q7:Municipios" />
+      <xs:element minOccurs="0" name="Nick" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Oficina" nillable="true" type="q8:Centros" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumentacion" nillable="true" type="tns:ArrayOfTiposDocumentacion" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="tns:TiposIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Suscriptores" nillable="true" type="tns:Suscriptores" />
+  <xs:complexType name="ArrayOfTiposDocumentacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TiposDocumentacion" nillable="true" type="tns:TiposDocumentacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTiposDocumentacion" nillable="true" type="tns:ArrayOfTiposDocumentacion" />
+  <xs:complexType name="TiposDocumentacion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q9:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TiposDocumentacion" nillable="true" type="tns:TiposDocumentacion" />
+  <xs:complexType name="TiposIdentificacion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q10:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TiposIdentificacion" nillable="true" type="tns:TiposIdentificacion" />
+  <xs:complexType name="NotificacionElectronicaInformacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      <xs:element minOccurs="0" name="Notificacion" nillable="true" type="tns:NotificacionInformacion" />
+      <xs:element minOccurs="0" name="Suscriptor" nillable="true" type="tns:Suscriptores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificacionElectronicaInformacion" nillable="true" type="tns:NotificacionElectronicaInformacion" />
+  <xs:complexType name="NotificacionInformacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Notificaciones">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Documento" nillable="true" type="q11:ElementoMedia" />
+          <xs:element minOccurs="0" name="FechaRecepcion" type="xs:dateTime" />
+          <xs:element xmlns:q12="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Recibo" nillable="true" type="q12:ElementoMedia" />
+          <xs:element xmlns:q13="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Traslado" nillable="true" type="q13:ArrayOfElementoMedia" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificacionInformacion" nillable="true" type="tns:NotificacionInformacion" />
+  <xs:complexType name="NotificacionElectronicaNoBinario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      <xs:element minOccurs="0" name="Notificacion" nillable="true" type="tns:NotificacionNoBinario" />
+      <xs:element minOccurs="0" name="Suscriptores" nillable="true" type="tns:ArrayOfSuscriptores" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificacionElectronicaNoBinario" nillable="true" type="tns:NotificacionElectronicaNoBinario" />
+  <xs:complexType name="NotificacionNoBinario">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Notificaciones">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentificadorMedia" type="xs:long" />
+          <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdentificadoresTraslado" nillable="true" type="q14:ArrayOflong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificacionNoBinario" nillable="true" type="tns:NotificacionNoBinario" />
+  <xs:complexType name="ArrayOfNotificacionElectronicaInformacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificacionElectronicaInformacion" nillable="true" type="tns:NotificacionElectronicaInformacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificacionElectronicaInformacion" nillable="true" type="tns:ArrayOfNotificacionElectronicaInformacion" />
+</xs:schema>

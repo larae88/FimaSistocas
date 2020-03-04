@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Verificador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaveCentro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="TOKEN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Verificador" nillable="true" type="tns:Verificador" />
+  <xs:complexType name="VerificadorFederado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Argumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="IpCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOKENFederado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOKENSesion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificadorFederado" nillable="true" type="tns:VerificadorFederado" />
+  <xs:complexType name="Centros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Pertencia" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Centros" nillable="true" type="tns:Centros" />
+  <xs:complexType name="Estados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Estados" nillable="true" type="tns:Estados" />
+  <xs:complexType name="Municipios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave" type="xs:long" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Municipios" nillable="true" type="tns:Municipios" />
+</xs:schema>

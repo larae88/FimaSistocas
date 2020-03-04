@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:i1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ImplementacionAccesoSuscriptores" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ContratoGestionSuscriptores_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <gzip:GZipEncoding xmlns:gzip="http://schemas.microsoft.com/ws/06/2004/mspolicy/netgzip1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="CustomBinding_ContratoAccesoSuscriptores_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <gzip:GZipEncoding xmlns:gzip="http://schemas.microsoft.com/ws/06/2004/mspolicy/netgzip1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" location="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" location="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?wsdl=wsdl1" />
+  <wsdl:types />
+  <wsdl:binding name="CustomBinding_ContratoGestionSuscriptores" type="i0:ContratoGestionSuscriptores">
+    <wsp:PolicyReference URI="#CustomBinding_ContratoGestionSuscriptores_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerTiposDocumentacion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposDocumentacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposIdentificacion">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposIdentificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSuscriptorFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/GuardarSuscriptorFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzon">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonSuscriptor">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonSuscriptor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonNotificacionElectronica">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonNotificacionElectronica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListadoBuzones">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerListadoBuzones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzones">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearBuzonExpediente">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/BloquearBuzonExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientesFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientesFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientes">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAccesoExpediente">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/AgregarAccesoExpediente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_ContratoAccesoSuscriptores" type="i1:ContratoAccesoSuscriptores">
+    <wsp:PolicyReference URI="#CustomBinding_ContratoAccesoSuscriptores_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Acceso">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/Acceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerficarAcceso">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerficarAcceso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarAccesoFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerificarAccesoFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientes">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientesFederado">
+      <soap12:operation soapAction="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientesFederado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImplementacionAccesoSuscriptores">
+    <wsdl:port name="CustomBinding_ContratoGestionSuscriptores" binding="tns:CustomBinding_ContratoGestionSuscriptores">
+      <soap12:address location="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_ContratoAccesoSuscriptores" binding="tns:CustomBinding_ContratoAccesoSuscriptores">
+      <soap12:address location="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

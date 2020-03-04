@@ -1,0 +1,25 @@
+********** TABLAS
+	+ autos_ne_ar
+	+ firmas
+	+ huellas_archivos
+	+ ne_personaje
+	+ notificacion_personaje
+	+ valida_firma
+********** PROCEDIMIENTOS Y FUNCIONES
+	+ proc_AgregarAutoNeAr
+	+ proc_CargarFirmasAcuerdo
+	+ proc_EliminarAutoNeAr
+	+ proc_EliminarFirmas
+	+ proc_EliminarRastrosFirma
+	+ proc_GuardarHuellasArchivos
+	+ proc_GuardarNotificacionPersonaje
+	+ proc_ObtenerAcuerdosANotificar
+	+ proc_obtenerAcueSusWeb -> para enviar los acuerdos a internet, trae mas opciones
+	+ proc_ObtenerFirmasNotificar
+	+ proc_ObtenerPartes
+	+ proc_ObtenerPersonajesNotificar
+	+ proc_RealizarGuardadoFirma
+	+ proc_RealizarGuardadoFirmaArchivos
+	+ proc_regresaDatosFirma
+	+ proc_RevocarFirma
+	+ func_ObtenerNombresNotificar

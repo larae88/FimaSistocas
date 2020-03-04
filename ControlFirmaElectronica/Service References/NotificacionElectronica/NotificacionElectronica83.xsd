@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+  <xs:complexType name="VerificadorSuscriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroTrabajo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificadorSuscriptor" nillable="true" type="tns:VerificadorSuscriptor" />
+  <xs:complexType name="VerificadorFederadoSuscriptor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VerificadorSuscriptor">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="VerificadorFederado" nillable="true" type="q1:VerificadorFederado" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerificadorFederadoSuscriptor" nillable="true" type="tns:VerificadorFederadoSuscriptor" />
+</xs:schema>

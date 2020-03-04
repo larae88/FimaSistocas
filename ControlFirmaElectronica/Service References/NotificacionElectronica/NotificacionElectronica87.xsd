@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd3" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+  <xs:complexType name="Cuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroTrabajo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="Nick" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cuenta" nillable="true" type="tns:Cuenta" />
+  <xs:complexType name="EstadoLogeo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="tns:TiposEstado" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SesionInformacion" nillable="true" type="tns:InformacionSesion" />
+      <xs:element minOccurs="0" name="TicketSesion" nillable="true" type="tns:Tickets" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoLogeo" nillable="true" type="tns:EstadoLogeo" />
+  <xs:simpleType name="TiposEstado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aceptado" />
+      <xs:enumeration value="NoAceptado" />
+      <xs:enumeration value="Bloqueado" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Caducado" />
+      <xs:enumeration value="NoActivado" />
+      <xs:enumeration value="EnUso" />
+      <xs:enumeration value="Cerrado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TiposEstado" nillable="true" type="tns:TiposEstado" />
+  <xs:complexType name="InformacionSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:int" />
+      <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaActividad" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformacionSesion" nillable="true" type="tns:InformacionSesion" />
+  <xs:complexType name="InformacionSesionFederada">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:InformacionSesion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TokenSesion" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InformacionSesionFederada" nillable="true" type="tns:InformacionSesionFederada" />
+  <xs:complexType name="Tickets">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activacion" nillable="true" type="tns:Activaciones" />
+      <xs:element minOccurs="0" name="Caducidad" nillable="true" type="tns:Caducidades" />
+      <xs:element minOccurs="0" name="Centro" nillable="true" type="tns:Centros" />
+      <xs:element minOccurs="0" name="Credencial" nillable="true" type="tns:Credenciales" />
+      <xs:element minOccurs="0" name="Especial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaAlta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Limite" type="xs:int" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Nivel" nillable="true" type="tns:Niveles" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="tns:Plataformas" />
+      <xs:element minOccurs="0" name="Privilegios" nillable="true" type="tns:ArrayOfPrivilegios" />
+      <xs:element minOccurs="0" name="Puesto" nillable="true" type="tns:Puestos" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Tickets" nillable="true" type="tns:Tickets" />
+  <xs:complexType name="Activaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acepto" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activaciones" nillable="true" type="tns:Activaciones" />
+  <xs:complexType name="Caducidades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaFinal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Caducidades" nillable="true" type="tns:Caducidades" />
+  <xs:simpleType name="TipoMovimiento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NADA" />
+      <xs:enumeration value="NUEVO" />
+      <xs:enumeration value="ACTUALIZAR" />
+      <xs:enumeration value="ELIMINAR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoMovimiento" nillable="true" type="tns:TipoMovimiento" />
+  <xs:complexType name="Centros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Pertencia" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Centros" nillable="true" type="tns:Centros" />
+  <xs:complexType name="Credenciales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Centro" nillable="true" type="tns:Centros" />
+      <xs:element minOccurs="0" name="CorreosRegistrados" nillable="true" type="tns:ArrayOfCorreos" />
+      <xs:element minOccurs="0" name="Domicilio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estados" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Foto" nillable="true" type="q1:ElementoMedia" />
+      <xs:element minOccurs="0" name="GradosAcademicos" nillable="true" type="tns:ArrayOfGradoAcademico" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Iniciales" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Materno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="tns:Municipios" />
+      <xs:element minOccurs="0" name="Nick" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroEmpleado" type="xs:long" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreguntasRegistradas" nillable="true" type="tns:ArrayOfPreguntas" />
+      <xs:element minOccurs="0" name="RFC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sexo" type="tns:TiposSexo" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TelefonosRegistrados" nillable="true" type="tns:ArrayOfTelefonos" />
+      <xs:element minOccurs="0" name="puesto" nillable="true" type="tns:Puestos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Credenciales" nillable="true" type="tns:Credenciales" />
+  <xs:complexType name="ArrayOfCorreos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Correos" nillable="true" type="tns:Correos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCorreos" nillable="true" type="tns:ArrayOfCorreos" />
+  <xs:complexType name="Correos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Default" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Correos" nillable="true" type="tns:Correos" />
+  <xs:complexType name="Estados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Estados" nillable="true" type="tns:Estados" />
+  <xs:complexType name="ArrayOfGradoAcademico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GradoAcademico" nillable="true" type="tns:GradoAcademico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGradoAcademico" nillable="true" type="tns:ArrayOfGradoAcademico" />
+  <xs:complexType name="GradoAcademico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Curso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Final" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Formacion" nillable="true" type="tns:TiposFormacion" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Inicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Institucion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GradoAcademico" nillable="true" type="tns:GradoAcademico" />
+  <xs:complexType name="TiposFormacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Grado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Relevancia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TiposFormacion" nillable="true" type="tns:TiposFormacion" />
+  <xs:complexType name="Municipios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Clave" type="xs:long" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Municipios" nillable="true" type="tns:Municipios" />
+  <xs:complexType name="ArrayOfPreguntas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Preguntas" nillable="true" type="tns:Preguntas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPreguntas" nillable="true" type="tns:ArrayOfPreguntas" />
+  <xs:complexType name="Preguntas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Respuesta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="tns:TipoPreguntas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Preguntas" nillable="true" type="tns:Preguntas" />
+  <xs:complexType name="TipoPreguntas">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q2:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoPreguntas" nillable="true" type="tns:TipoPreguntas" />
+  <xs:complexType name="TipoPrivilegios">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q3:BaseCatalogos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoPrivilegios" nillable="true" type="tns:TipoPrivilegios" />
+  <xs:complexType name="TipoTelefonos">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q4:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoTelefonos" nillable="true" type="tns:TipoTelefonos" />
+  <xs:simpleType name="TiposSexo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INDEFINIDO" />
+      <xs:enumeration value="Masculino" />
+      <xs:enumeration value="Femenino" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TiposSexo" nillable="true" type="tns:TiposSexo" />
+  <xs:complexType name="ArrayOfTelefonos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefonos" nillable="true" type="tns:Telefonos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelefonos" nillable="true" type="tns:ArrayOfTelefonos" />
+  <xs:complexType name="Telefonos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="tns:TipoTelefonos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Telefonos" nillable="true" type="tns:Telefonos" />
+  <xs:complexType name="Puestos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Puestos" nillable="true" type="tns:Puestos" />
+  <xs:complexType name="Niveles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GeneraRangos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Importancia" type="xs:int" />
+      <xs:element minOccurs="0" name="MaximoOficina" type="xs:int" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="tns:Plataformas" />
+      <xs:element minOccurs="0" name="PrivilegiosDefault" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Niveles" nillable="true" type="tns:Niveles" />
+  <xs:complexType name="Plataformas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdPlataformaCentro" type="xs:long" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="InteraccionHidra" type="xs:int" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Online" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusPlataformaCentro" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plataformas" nillable="true" type="tns:Plataformas" />
+  <xs:complexType name="ArrayOfPrivilegios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Privilegios" nillable="true" type="tns:Privilegios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrivilegios" nillable="true" type="tns:ArrayOfPrivilegios" />
+  <xs:complexType name="Privilegios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:TipoMovimiento" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="tns:Plataformas" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoPrivilegio" nillable="true" type="tns:TipoPrivilegios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Privilegios" nillable="true" type="tns:Privilegios" />
+  <xs:complexType name="CuentaFederada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Argumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="IpCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentaFederada" nillable="true" type="tns:CuentaFederada" />
+  <xs:complexType name="EstadoLogeoFederado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="tns:TiposEstado" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SesionInformacion" nillable="true" type="tns:InformacionSesionFederada" />
+      <xs:element minOccurs="0" name="TicketSesion" nillable="true" type="tns:TicketsFederados" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoLogeoFederado" nillable="true" type="tns:EstadoLogeoFederado" />
+  <xs:complexType name="TicketsFederados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaAlta" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="tns:Plataformas" />
+      <xs:element minOccurs="0" name="Sistema" nillable="true" type="tns:SistemaFederado" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TicketsFederados" nillable="true" type="tns:TicketsFederados" />
+  <xs:complexType name="SistemaFederado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Responsable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SistemaFederado" nillable="true" type="tns:SistemaFederado" />
+  <xs:complexType name="Verificador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClaveCentro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="TOKEN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Verificador" nillable="true" type="tns:Verificador" />
+  <xs:complexType name="VerificadorFederado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Argumento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClavePlataforma" type="xs:int" />
+      <xs:element minOccurs="0" name="IpCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOKENFederado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOKENSesion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificadorFederado" nillable="true" type="tns:VerificadorFederado" />
+</xs:schema>

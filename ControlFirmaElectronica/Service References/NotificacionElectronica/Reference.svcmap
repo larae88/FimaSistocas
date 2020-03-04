@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8eb3f92e-3cb8-47e1-a24b-5d3b488d1aa5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NotificacionElectronica8.xsd" MetadataType="Schema" ID="57bdd876-cee2-4cda-b079-a64cd3552766" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd0" />
+    <MetadataFile FileName="NotificacionElectronica81.xsd" MetadataType="Schema" ID="a5c5cd32-bee5-4569-a5b0-61f5c6fb0be6" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd4" />
+    <MetadataFile FileName="NotificacionElectronica82.xsd" MetadataType="Schema" ID="58423e4b-a6ba-4ffa-8768-7600948e1c9c" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd3" />
+    <MetadataFile FileName="NotificacionElectronica83.xsd" MetadataType="Schema" ID="cd6aed53-da3e-4d62-9c6b-9249610d278e" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd7" />
+    <MetadataFile FileName="ImplementacionNotificacionElectronica1.wsdl" MetadataType="Wsdl" ID="2f84a852-1d32-4468-a86c-386e0dbfb42c" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?wsdl" />
+    <MetadataFile FileName="NotificacionElectronica84.xsd" MetadataType="Schema" ID="93bc7d26-af85-458f-8851-a4f620f3f99d" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd1" />
+    <MetadataFile FileName="NotificacionElectronica85.xsd" MetadataType="Schema" ID="139bd815-8187-41d3-9d11-6f7d3ad80806" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd6" />
+    <MetadataFile FileName="NotificacionElectronica86.xsd" MetadataType="Schema" ID="9853faa6-4c59-4af1-bb9c-6a134af31072" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd5" />
+    <MetadataFile FileName="NotificacionElectronica1.disco" MetadataType="Disco" ID="44a5fb3d-5f09-4789-bcbc-ab4b9290a173" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?disco" />
+    <MetadataFile FileName="NotificacionElectronica87.xsd" MetadataType="Schema" ID="e82185f3-9c79-4c12-ac3a-bdcc36cd611f" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd2" />
+    <MetadataFile FileName="NotificacionElectronica1.wsdl" MetadataType="Wsdl" ID="7dceb2b6-a764-4d7e-98b3-8bab12f2b7cc" SourceId="1" SourceUrl="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

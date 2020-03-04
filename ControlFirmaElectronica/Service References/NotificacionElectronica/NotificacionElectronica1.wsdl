@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/Imports">
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd0" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd3" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd5" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd7" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ContratoNotifiacionElectronica_IniciarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_IniciarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_IniciarSesionFederada_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionFederada" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_IniciarSesionFederada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionFederadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_CerrarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_CerrarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_CerrarSesionFederada_InputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionFederada" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_CerrarSesionFederada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CerrarSesionFederadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacionNoBinario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacionNoBinario" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacionNoBinario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacionNoBinarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacionFederada_InputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacionFederada" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_RealizarNotificacionFederada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RealizarNotificacionFederadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesExpediente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesExpediente" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesExpediente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficaciones" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesFederadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesSuscriptor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesSuscriptor" />
+  </wsdl:message>
+  <wsdl:message name="ContratoNotifiacionElectronica_ObtenerNoficacionesSuscriptor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerNoficacionesSuscriptorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContratoNotifiacionElectronica">
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesion" message="tns:ContratoNotifiacionElectronica_IniciarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesionResponse" message="tns:ContratoNotifiacionElectronica_IniciarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesionFederada">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesionFederada" message="tns:ContratoNotifiacionElectronica_IniciarSesionFederada_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/IniciarSesionFederadaResponse" message="tns:ContratoNotifiacionElectronica_IniciarSesionFederada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesion" message="tns:ContratoNotifiacionElectronica_CerrarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesionResponse" message="tns:ContratoNotifiacionElectronica_CerrarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CerrarSesionFederada">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesionFederada" message="tns:ContratoNotifiacionElectronica_CerrarSesionFederada_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/CerrarSesionFederadaResponse" message="tns:ContratoNotifiacionElectronica_CerrarSesionFederada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacion" message="tns:ContratoNotifiacionElectronica_RealizarNotificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionResponse" message="tns:ContratoNotifiacionElectronica_RealizarNotificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacionNoBinario">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionNoBinario" message="tns:ContratoNotifiacionElectronica_RealizarNotificacionNoBinario_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionNoBinarioResponse" message="tns:ContratoNotifiacionElectronica_RealizarNotificacionNoBinario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarNotificacionFederada">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionFederada" message="tns:ContratoNotifiacionElectronica_RealizarNotificacionFederada_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/RealizarNotificacionFederadaResponse" message="tns:ContratoNotifiacionElectronica_RealizarNotificacionFederada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacion" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionResponse" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesExpediente">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesExpediente" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesExpediente_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesExpedienteResponse" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesExpediente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficaciones">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficaciones" message="tns:ContratoNotifiacionElectronica_ObtenerNoficaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesResponse" message="tns:ContratoNotifiacionElectronica_ObtenerNoficaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesFederado" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesFederadoResponse" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesFederado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerNoficacionesSuscriptor">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesSuscriptor" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesSuscriptor_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/ContratoNotifiacionElectronica/ObtenerNoficacionesSuscriptorResponse" message="tns:ContratoNotifiacionElectronica_ObtenerNoficacionesSuscriptor_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

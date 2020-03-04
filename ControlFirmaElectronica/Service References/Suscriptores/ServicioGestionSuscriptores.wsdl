@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/Imports">
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd5" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd0" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd4" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ContratoAccesoSuscriptores_Acceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:Acceso" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_Acceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_VerficarAcceso_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerficarAcceso" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_VerficarAcceso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerficarAccesoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_VerificarAccesoFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarAccesoFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_VerificarAccesoFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarAccesoFederadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_ObtenerAccesosExpedientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientes" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_ObtenerAccesosExpedientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_ObtenerAccesosExpedientesFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoAccesoSuscriptores_ObtenerAccesosExpedientesFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesFederadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContratoAccesoSuscriptores">
+    <wsdl:operation name="Acceso">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/Acceso" message="tns:ContratoAccesoSuscriptores_Acceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/AccesoResponse" message="tns:ContratoAccesoSuscriptores_Acceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerficarAcceso">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerficarAcceso" message="tns:ContratoAccesoSuscriptores_VerficarAcceso_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerficarAccesoResponse" message="tns:ContratoAccesoSuscriptores_VerficarAcceso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificarAccesoFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerificarAccesoFederado" message="tns:ContratoAccesoSuscriptores_VerificarAccesoFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/VerificarAccesoFederadoResponse" message="tns:ContratoAccesoSuscriptores_VerificarAccesoFederado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientes">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientes" message="tns:ContratoAccesoSuscriptores_ObtenerAccesosExpedientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientesResponse" message="tns:ContratoAccesoSuscriptores_ObtenerAccesosExpedientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientesFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientesFederado" message="tns:ContratoAccesoSuscriptores_ObtenerAccesosExpedientesFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores/ContratoAccesoSuscriptores/ObtenerAccesosExpedientesFederadoResponse" message="tns:ContratoAccesoSuscriptores_ObtenerAccesosExpedientesFederado_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

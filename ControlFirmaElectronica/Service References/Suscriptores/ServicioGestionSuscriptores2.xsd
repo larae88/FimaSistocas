@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd4" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+  <xs:element name="ObtenerTiposDocumentacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificacion" nillable="true" type="q1:Verificador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposDocumentacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerTiposDocumentacionResult" nillable="true" type="tns:ArrayOfTiposDocumentacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfTiposDocumentacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TiposDocumentacion" nillable="true" type="tns:TiposDocumentacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTiposDocumentacion" nillable="true" type="tns:ArrayOfTiposDocumentacion" />
+  <xs:complexType name="TiposDocumentacion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q2:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TiposDocumentacion" nillable="true" type="tns:TiposDocumentacion" />
+  <xs:element name="ObtenerTiposIdentificacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificacion" nillable="true" type="q3:Verificador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTiposIdentificacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerTiposIdentificacionResult" nillable="true" type="tns:ArrayOfTiposIdentificacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfTiposIdentificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TiposIdentificacion" nillable="true" type="tns:TiposIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTiposIdentificacion" nillable="true" type="tns:ArrayOfTiposIdentificacion" />
+  <xs:complexType name="TiposIdentificacion">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q4:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TiposIdentificacion" nillable="true" type="tns:TiposIdentificacion" />
+  <xs:element name="GuardarSuscriptorFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="VerificadorFederado" nillable="true" type="q5:VerificadorFederado" />
+        <xs:element minOccurs="0" name="Parametro" nillable="true" type="tns:Suscriptor" />
+        <xs:element xmlns:q6="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Oficina" nillable="true" type="q6:Centros" />
+        <xs:element xmlns:q7="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Municipio" nillable="true" type="q7:Municipios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Suscriptor">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Acuse" nillable="true" type="q8:ElementoMedia" />
+      <xs:element minOccurs="0" name="Calle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPostal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Colonia" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Estado" nillable="true" type="q9:Estados" />
+      <xs:element minOccurs="0" name="Expedientes" nillable="true" type="tns:ArrayOfExpedientes" />
+      <xs:element minOccurs="0" name="Exterior" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" minOccurs="0" name="Formato" nillable="true" type="q10:ElementoMedia" />
+      <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentificadorCredencial" type="xs:long" />
+      <xs:element minOccurs="0" name="Interior" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Materno" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Municipio" nillable="true" type="q11:Municipios" />
+      <xs:element minOccurs="0" name="Nick" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroIdentificacion" nillable="true" type="xs:string" />
+      <xs:element xmlns:q12="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Oficina" nillable="true" type="q12:Centros" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paterno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDocumentacion" nillable="true" type="tns:ArrayOfTiposDocumentacion" />
+      <xs:element minOccurs="0" name="TipoIdentificacion" nillable="true" type="tns:TiposIdentificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Suscriptor" nillable="true" type="tns:Suscriptor" />
+  <xs:complexType name="ArrayOfExpedientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expedientes" nillable="true" type="tns:Expedientes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpedientes" nillable="true" type="tns:ArrayOfExpedientes" />
+  <xs:complexType name="Expedientes">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="CentroTrabajo" nillable="true" type="q13:Centros" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="NumeroExpediente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoExpediente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expedientes" nillable="true" type="tns:Expedientes" />
+  <xs:element name="GuardarSuscriptorFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GuardarSuscriptorFederadoResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q14:Verificador" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerBuzonResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonSuscriptor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Verificador" nillable="true" type="tns:VerificadorSuscriptor" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="VerificadorSuscriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CentroTrabajo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VerificadorSuscriptor" nillable="true" type="tns:VerificadorSuscriptor" />
+  <xs:element name="ObtenerBuzonSuscriptorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerBuzonSuscriptorResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonNotificacionElectronica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonNotificacionElectronicaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerBuzonNotificacionElectronicaResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListadoBuzones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q15:Verificador" />
+        <xs:element minOccurs="0" name="fechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
+        <xs:element xmlns:q16="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Oficina" nillable="true" type="q16:Centros" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerListadoBuzonesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerListadoBuzonesResult" nillable="true" type="tns:ArrayOfSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfSuscriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Suscriptor" nillable="true" type="tns:Suscriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSuscriptor" nillable="true" type="tns:ArrayOfSuscriptor" />
+  <xs:element name="ObtenerBuzones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q17:VerificadorFederado" />
+        <xs:element minOccurs="0" name="fechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
+        <xs:element xmlns:q18="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Oficina" nillable="true" type="q18:Centros" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerBuzonesResult" nillable="true" type="tns:ArrayOfSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q19:VerificadorFederado" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerBuzonFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerBuzonFederadoResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BloquearBuzonExpediente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q20:Verificador" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+        <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BloquearBuzonExpedienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BloquearBuzonExpedienteResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientesFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q21:VerificadorFederado" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+        <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientesFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerAccesosExpedientesFederadoResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q22:VerificadorFederado" />
+        <xs:element minOccurs="0" name="Parametro" nillable="true" type="tns:BusquedaPendiente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BusquedaPendiente">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Centro" nillable="true" type="q23:Centros" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="tns:TipoPendiente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusquedaPendiente" nillable="true" type="tns:BusquedaPendiente" />
+  <xs:complexType name="TipoPendiente">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" base="q24:BaseCatalogos">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TipoPendiente" nillable="true" type="tns:TipoPendiente" />
+  <xs:element name="ObtenerAccesosExpedientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObtenerAccesosExpedientesResult" nillable="true" type="tns:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarAccesoExpediente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q25:Verificador" />
+        <xs:element minOccurs="0" name="IdentificadorBuzon" type="xs:long" />
+        <xs:element minOccurs="0" name="Expediente" nillable="true" type="tns:Expedientes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgregarAccesoExpedienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AgregarAccesoExpedienteResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Cuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IpCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nick" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cuenta" nillable="true" type="tns:Cuenta" />
+  <xs:complexType name="EstadoLogeo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" type="tns:TiposEstado" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SesionInformacion" nillable="true" type="tns:InformacionSesion" />
+      <xs:element minOccurs="0" name="Suscriptor" nillable="true" type="tns:Suscriptor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EstadoLogeo" nillable="true" type="tns:EstadoLogeo" />
+  <xs:simpleType name="TiposEstado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aceptado" />
+      <xs:enumeration value="NoAceptado" />
+      <xs:enumeration value="Bloqueado" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="Caducado" />
+      <xs:enumeration value="NoActivado" />
+      <xs:enumeration value="EnUso" />
+      <xs:enumeration value="Cerrado" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TiposEstado" nillable="true" type="tns:TiposEstado" />
+  <xs:complexType name="InformacionSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:int" />
+      <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaActividad" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InformacionSesion" nillable="true" type="tns:InformacionSesion" />
+  <xs:complexType name="ValidadorAccesoSuscriptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdentificadoSesion" type="xs:long" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Valido" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ValidadorAccesoSuscriptor" nillable="true" type="tns:ValidadorAccesoSuscriptor" />
+  <xs:complexType name="VerificadorFederadoSuscriptor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:VerificadorSuscriptor">
+        <xs:sequence>
+          <xs:element xmlns:q26="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="VerificadorFederado" nillable="true" type="q26:VerificadorFederado" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VerificadorFederadoSuscriptor" nillable="true" type="tns:VerificadorFederadoSuscriptor" />
+</xs:schema>

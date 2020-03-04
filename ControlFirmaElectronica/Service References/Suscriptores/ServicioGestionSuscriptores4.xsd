@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ElementoMedia">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Centro" nillable="true" type="q1:Centros" />
+      <xs:element minOccurs="0" name="Credencial" type="xs:long" />
+      <xs:element minOccurs="0" name="Digestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Disponible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Firmas" nillable="true" type="tns:ArrayOfFirma" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Movimiento" type="tns:OpcionesMovimientoMedia" />
+      <xs:element minOccurs="0" name="NombreOriginal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temporal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="tns:TiposMedia" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElementoMedia" nillable="true" type="tns:ElementoMedia" />
+  <xs:complexType name="ArrayOfFirma">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Firma" nillable="true" type="tns:Firma" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFirma" nillable="true" type="tns:ArrayOfFirma" />
+  <xs:complexType name="Firma">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="IdentificadorSecuencia" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Firma" nillable="true" type="tns:Firma" />
+  <xs:simpleType name="OpcionesMovimientoMedia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Eliminado" />
+      <xs:enumeration value="Activo" />
+      <xs:enumeration value="Modificado" />
+      <xs:enumeration value="Nuevo" />
+      <xs:enumeration value="Nada" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OpcionesMovimientoMedia" nillable="true" type="tns:OpcionesMovimientoMedia" />
+  <xs:complexType name="TiposMedia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Extencion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TiposMedia" nillable="true" type="tns:TiposMedia" />
+  <xs:complexType name="ElementoAudioVideoMedia">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ElementoMedia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Capitulos" nillable="true" type="tns:ArrayOfCapituloAudioVideo" />
+          <xs:element minOccurs="0" name="DuracionTotal" type="ser:duration" />
+          <xs:element minOccurs="0" name="Esquema" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ElementoAudioVideoMedia" nillable="true" type="tns:ElementoAudioVideoMedia" />
+  <xs:complexType name="ArrayOfCapituloAudioVideo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CapituloAudioVideo" nillable="true" type="tns:CapituloAudioVideo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCapituloAudioVideo" nillable="true" type="tns:ArrayOfCapituloAudioVideo" />
+  <xs:complexType name="CapituloAudioVideo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Duracion" type="ser:duration" />
+      <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CapituloAudioVideo" nillable="true" type="tns:CapituloAudioVideo" />
+</xs:schema>

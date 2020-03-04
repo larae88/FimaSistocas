@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/accesosuscriptores" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd0" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" />
+  <xs:element name="Acceso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="login" nillable="true" type="q1:Cuenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccesoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="AccesoResult" nillable="true" type="q2:EstadoLogeo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerficarAcceso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q3:VerificadorSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerficarAccesoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="VerficarAccesoResult" nillable="true" type="q4:ValidadorAccesoSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarAccesoFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q5:VerificadorFederadoSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarAccesoFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="VerificarAccesoFederadoResult" nillable="true" type="q6:ValidadorAccesoSuscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q7:VerificadorSuscriptor" />
+        <xs:element xmlns:q8="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Parametro" nillable="true" type="q8:BusquedaPendiente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="ObtenerAccesosExpedientesResult" nillable="true" type="q9:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientesFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q10:VerificadorFederadoSuscriptor" />
+        <xs:element xmlns:q11="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Parametro" nillable="true" type="q11:BusquedaPendiente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerAccesosExpedientesFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="ObtenerAccesosExpedientesFederadoResult" nillable="true" type="q12:Suscriptor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

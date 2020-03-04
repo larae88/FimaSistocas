@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/Imports">
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd0" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/gto.poderjudicial.baseplataforma" />
+      <xsd:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioGestionSuscriptores/ServicioGestionSuscriptores.svc?xsd=xsd4" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/media" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerTiposDocumentacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposDocumentacion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerTiposDocumentacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposDocumentacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerTiposIdentificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposIdentificacion" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerTiposIdentificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposIdentificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_GuardarSuscriptorFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSuscriptorFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_GuardarSuscriptorFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarSuscriptorFederadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzon_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzon" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonSuscriptor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonSuscriptor" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonSuscriptor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonSuscriptorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonNotificacionElectronica_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonNotificacionElectronica" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonNotificacionElectronica_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonNotificacionElectronicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerListadoBuzones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListadoBuzones" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerListadoBuzones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerListadoBuzonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzones" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerBuzonFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerBuzonFederadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_BloquearBuzonExpediente_InputMessage">
+    <wsdl:part name="parameters" element="tns:BloquearBuzonExpediente" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_BloquearBuzonExpediente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BloquearBuzonExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerAccesosExpedientesFederado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesFederado" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerAccesosExpedientesFederado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesFederadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerAccesosExpedientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientes" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_ObtenerAccesosExpedientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAccesosExpedientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_AgregarAccesoExpediente_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAccesoExpediente" />
+  </wsdl:message>
+  <wsdl:message name="ContratoGestionSuscriptores_AgregarAccesoExpediente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAccesoExpedienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContratoGestionSuscriptores">
+    <wsdl:operation name="ObtenerTiposDocumentacion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposDocumentacion" message="tns:ContratoGestionSuscriptores_ObtenerTiposDocumentacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposDocumentacionResponse" message="tns:ContratoGestionSuscriptores_ObtenerTiposDocumentacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposIdentificacion">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposIdentificacion" message="tns:ContratoGestionSuscriptores_ObtenerTiposIdentificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerTiposIdentificacionResponse" message="tns:ContratoGestionSuscriptores_ObtenerTiposIdentificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarSuscriptorFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/GuardarSuscriptorFederado" message="tns:ContratoGestionSuscriptores_GuardarSuscriptorFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/GuardarSuscriptorFederadoResponse" message="tns:ContratoGestionSuscriptores_GuardarSuscriptorFederado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzon">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzon" message="tns:ContratoGestionSuscriptores_ObtenerBuzon_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonResponse" message="tns:ContratoGestionSuscriptores_ObtenerBuzon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonSuscriptor">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonSuscriptor" message="tns:ContratoGestionSuscriptores_ObtenerBuzonSuscriptor_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonSuscriptorResponse" message="tns:ContratoGestionSuscriptores_ObtenerBuzonSuscriptor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonNotificacionElectronica">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonNotificacionElectronica" message="tns:ContratoGestionSuscriptores_ObtenerBuzonNotificacionElectronica_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonNotificacionElectronicaResponse" message="tns:ContratoGestionSuscriptores_ObtenerBuzonNotificacionElectronica_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerListadoBuzones">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerListadoBuzones" message="tns:ContratoGestionSuscriptores_ObtenerListadoBuzones_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerListadoBuzonesResponse" message="tns:ContratoGestionSuscriptores_ObtenerListadoBuzones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzones">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzones" message="tns:ContratoGestionSuscriptores_ObtenerBuzones_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonesResponse" message="tns:ContratoGestionSuscriptores_ObtenerBuzones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerBuzonFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonFederado" message="tns:ContratoGestionSuscriptores_ObtenerBuzonFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerBuzonFederadoResponse" message="tns:ContratoGestionSuscriptores_ObtenerBuzonFederado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearBuzonExpediente">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/BloquearBuzonExpediente" message="tns:ContratoGestionSuscriptores_BloquearBuzonExpediente_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/BloquearBuzonExpedienteResponse" message="tns:ContratoGestionSuscriptores_BloquearBuzonExpediente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientesFederado">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientesFederado" message="tns:ContratoGestionSuscriptores_ObtenerAccesosExpedientesFederado_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientesFederadoResponse" message="tns:ContratoGestionSuscriptores_ObtenerAccesosExpedientesFederado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAccesosExpedientes">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientes" message="tns:ContratoGestionSuscriptores_ObtenerAccesosExpedientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/ObtenerAccesosExpedientesResponse" message="tns:ContratoGestionSuscriptores_ObtenerAccesosExpedientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAccesoExpediente">
+      <wsdl:input wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/AgregarAccesoExpediente" message="tns:ContratoGestionSuscriptores_AgregarAccesoExpediente_InputMessage" />
+      <wsdl:output wsaw:Action="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores/ContratoGestionSuscriptores/AgregarAccesoExpedienteResponse" message="tns:ContratoGestionSuscriptores_AgregarAccesoExpediente_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

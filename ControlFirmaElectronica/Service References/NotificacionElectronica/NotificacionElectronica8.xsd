@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" elementFormDefault="qualified" targetNamespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd2" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd5" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" />
+  <xs:import schemaLocation="https://plataforma.poderjudicial-gto.gob.mx/ServicioNotificacionElectronica/NotificacionElectronica.svc?xsd=xsd7" namespace="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" />
+  <xs:element name="IniciarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Login" nillable="true" type="q1:Cuenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="IniciarSesionResult" nillable="true" type="q2:EstadoLogeo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarSesionFederada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Login" nillable="true" type="q3:CuentaFederada" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarSesionFederadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="IniciarSesionFederadaResult" nillable="true" type="q4:EstadoLogeoFederado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CerrarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q5:Verificador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CerrarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CerrarSesionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CerrarSesionFederada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q6:VerificadorFederado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CerrarSesionFederadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CerrarSesionFederadaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q7:Verificador" />
+        <xs:element xmlns:q8="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="Notificacion" nillable="true" type="q8:NotificacionElectronicaUploader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="RealizarNotificacionResult" nillable="true" type="q9:NotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacionNoBinario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q10:Verificador" />
+        <xs:element xmlns:q11="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="Notificacion" nillable="true" type="q11:NotificacionElectronicaNoBinario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacionNoBinarioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="RealizarNotificacionNoBinarioResult" nillable="true" type="q12:NotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacionFederada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q13:VerificadorFederado" />
+        <xs:element xmlns:q14="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="Notificacion" nillable="true" type="q14:NotificacionElectronicaUploader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RealizarNotificacionFederadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="RealizarNotificacionFederadaResult" nillable="true" type="q15:NotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q16:Verificador" />
+        <xs:element minOccurs="0" name="Identificador" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="ObtenerNoficacionResult" nillable="true" type="q17:NotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesExpediente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q18:VerificadorSuscriptor" />
+        <xs:element minOccurs="0" name="Expediente" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesExpedienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="ObtenerNoficacionesExpedienteResult" nillable="true" type="q19:ArrayOfNotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficaciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q20:Verificador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="ObtenerNoficacionesResult" nillable="true" type="q21:ArrayOfNotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesFederado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/hidra" minOccurs="0" name="Verificador" nillable="true" type="q22:VerificadorFederado" />
+        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesFederadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="ObtenerNoficacionesFederadoResult" nillable="true" type="q23:ArrayOfNotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesSuscriptor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/gestionsuscriptores" minOccurs="0" name="Verificador" nillable="true" type="q24:VerificadorSuscriptor" />
+        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerNoficacionesSuscriptorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://gto.poderjudicial-gto.gob.mx/plataformaelectronica/notificacion" minOccurs="0" name="ObtenerNoficacionesSuscriptorResult" nillable="true" type="q25:ArrayOfNotificacionElectronicaInformacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
